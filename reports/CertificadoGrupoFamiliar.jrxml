@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 5.1.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5496d78c-0f47-4cbe-b7c0-4fdd1b2800b4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<parameter name="NAME" class="java.lang.String"/>
+	<parameter name="ID_TYPE" class="java.lang.String"/>
+	<parameter name="ID_NUMBER" class="java.lang.String"/>
+	<parameter name="BENEFICIARIES" class="java.lang.String"/>
+	<parameter name="COMPANY" class="java.lang.String"/>
+	<parameter name="COMPANY_ID" class="java.lang.String"/>
+	<parameter name="COMPANY_ID_TYPE" class="java.lang.String"/>
+	<parameter name="IMG_PATH" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="112" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="-20" width="595" height="80" uuid="7cbb31a1-2c3d-4700-b452-fa72d71ae228"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/título.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="358" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="57" width="480" height="103" uuid="47e8b5cc-27ae-4c2f-b524-bcf6f812ddfb"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[LA CAJA COLOMBIANA DE SUBSIDIO FAMILIAR
+
+COLSUBSIDIO
+
+
+
+HACE CONSTAR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="230" width="480" height="70" uuid="5d48906a-fa0f-4489-bb47-fdedc5a28940"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Que el (la) señor(a) "+$P{NAME}+" identificado(a) con "+$P{ID_TYPE}+" No. "+$P{ID_NUMBER}+", se encuentra afiliado(a) a esta Caja de Compensación Familiar, a través de "+$P{COMPANY}+" con "+$P{COMPANY_ID_TYPE}+". "+$P{COMPANY_ID}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="300" width="480" height="58" uuid="e1278f52-db65-446d-90f1-f76c8a98640a">
+					<printWhenExpression><![CDATA[!$P{BENEFICIARIES}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En su grupo familiar figura(n) el(los) siguiente(s) registro(s) "+$P{BENEFICIARIES}+", como  beneficiario(s) de la cuota monetaria"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="331" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="130" width="480" height="41" uuid="14c169c7-ba94-40b5-86b7-c096dcb8a35a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[JOSE LEONARDO GONZALEZ VEGA
+Jefe Sección Afiliación y Postulación]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="210" width="520" height="30" uuid="bc1ddf0b-5149-499e-83c4-f1edc122e08f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bogotá D.C."+new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="210" y="30" width="130" height="100" uuid="90d0866f-b1b5-485e-b911-15d2cc571bd5"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/firmaMauricio.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="540" y="140" width="20" height="69" uuid="eee2f3c6-6b46-4f33-bbe9-1f73e21ad511"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/vigilado.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="260" width="556" height="40" uuid="b1db6a98-fbc2-443a-9b2b-4d82010832ab"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/base.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="-1" y="300" width="556" height="20" uuid="13933b90-0bca-468b-9981-bdb99993ebfc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Calle 26 # 25-50 Conmutador 742 0100 - Fax 340 2690 - A.A. 8573 Audioservicios Colsubsidio: 745 0999 Bogotá, D.C. www.colsubsidio.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

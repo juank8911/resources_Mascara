@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="s" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5496d78c-0f47-4cbe-b7c0-4fdd1b2800b4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<parameter name="COMPANY" class="java.lang.String"/>
+	<parameter name="COMPANY_ID" class="java.lang.String"/>
+	<parameter name="LAST_MONTH_CONT" class="java.lang.String"/>
+	<parameter name="LAST_YEAR_CONT" class="java.lang.String"/>
+	<parameter name="IMG_PATH" class="java.lang.String"/>
+	<parameter name="COMPANY_ID_TYPE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="-20" width="595" height="80" uuid="0a31d9a2-7b03-4f50-a6db-061747813fbc"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/título.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="422" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="70" width="480" height="123" uuid="47e8b5cc-27ae-4c2f-b524-bcf6f812ddfb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[LA CAJA COLOMBIANA DE SUBSIDIO FAMILIAR
+
+COLSUBSIDIO
+
+
+
+
+HACE CONSTAR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="230" width="480" height="60" uuid="5d48906a-fa0f-4489-bb47-fdedc5a28940"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. Que la empresa "+$P{COMPANY}+" identificado(a) con "+$P{COMPANY_ID_TYPE}+" "+$P{COMPANY_ID}+" se encuentra actualmente afiliada a esta Caja de Compensación Familiar."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="290" width="480" height="60" uuid="e1278f52-db65-446d-90f1-f76c8a98640a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2. Que la mencionada empresa ha efectuado aportes para el subsidio familiar, hasta el mes "+$P{LAST_MONTH_CONT}+" del año "+$P{LAST_YEAR_CONT}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="360" width="480" height="50" uuid="deb8d338-53ef-48b8-bc2b-93bbe2c9c4c0"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Esta certificación NO es válida para afiliación a otra Caja de Compensación Familiar, dentro del Departamento de Cundinamarca."]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="320" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="90" width="480" height="41" uuid="14c169c7-ba94-40b5-86b7-c096dcb8a35a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[ALEJANDRO ARANGO
+Jefe Departamento Administración de Afiliados]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="260" width="556" height="40" uuid="41ddec6e-e87a-473f-bb38-ce230871e084"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/base.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="-1" y="300" width="556" height="20" uuid="e6f8a0d8-4442-461f-ae9b-2b3129833262"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Calle 26 # 25-50 Conmutador 742 0100 - Fax 340 2690 - A.A. 8573 Audioservicios Colsubsidio: 745 0999 Bogotá, D.C. www.colsubsidio.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="210" width="520" height="30" uuid="bc1ddf0b-5149-499e-83c4-f1edc122e08f"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bogotá D.C."+DATEFORMAT(TODAY( ),"dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="540" y="140" width="20" height="69" uuid="c0c1d03b-fb49-454a-88fd-f12ab35fe12d"/>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/vigilado.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="205" y="0" width="150" height="90" uuid="ff1bf8f7-a0de-4871-b28b-092bcf9125d0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{IMG_PATH}+"/firmaSandra.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>
